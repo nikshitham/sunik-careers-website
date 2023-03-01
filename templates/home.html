@@ -2,54 +2,35 @@
 <html>
   <head>
     <title>SuNik Career page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(75, 75, 75);
-        text-align: center;
-      }
-
       #banner {
-        width: 100%;
         height: 360px;
+        width: 100%;
         object-fit: cover;
       }
-
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100,100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80,80, 80);
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      
     </style>
-  </head>
+    </head>
+  
   <body>
-    <div id="container">
-    <h1>SuNik Careers</h1>
-    <img id="banner" src="https://sunik-careers-website.nikshitham.repl.co/static/newbanner.jpeg" height="320">
-    <h2>About SuNik</h2>
-    <p class="bodytext">
+    <div class="container">
+    <h1 class="text-center mt-2 mb-4"> {{company_name}} Careers</h1>
+    <img class="img-fluid" id="banner" src="https://sunik-careers-website.nikshitham.repl.co/static/newbanner.jpeg">
+    <h2 class="text-center mt-2 mb-4">About SuNik</h2>
+    <p class="lead">
       In mi nulla, posuere in sollicitudin et, vestibulum sed nibh. Etiam in libero risus. Suspendisse sed nibh consequat, dapibus ante eu, viverra sapien. Cras sed mollis eros, eget pretium lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec finibus metus auctor, dapibus lectus sit amet, suscipit enim. In interdum congue nulla, in mollis diam ornare eu. Phasellus sagittis sit amet eros non consequat.
     </p>
-    <h2>Open positions</h2>
-    <p class="bodytext">To-do show the jobs here</p>
-      <div style="text-align: center">
-    <button>Contact us</button>
-        <p>Copy Rights 2023, SuNik</p>
+    <h2 class="text-center mt-2 mb-4">Open positions</h2>
+    <div>
+      {% for job in jobs %}
+      {% include 'jobitem.html' %}
+      {% endfor %}
+      </div>
+      <div class="text-center">
+    <button class="btn btn-primary btn-lg">Contact us</button>
+        <p class="mt-4">Copyright 2023, SuNik</p>
       </div>
       </div>
   </body>
